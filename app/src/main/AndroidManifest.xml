@@ -29,8 +29,6 @@
             android:configChanges="orientation"
             android:excludeFromRecents="true"
             android:launchMode="singleInstance"
-            android:screenOrientation="fullSensor"
-            android:taskAffinity=""
             android:theme="@android:style/Theme.Dialog"/>
 
         <receiver android:name=".CustomPhoneStateListener">

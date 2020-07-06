@@ -1,16 +1,19 @@
 package com.example.truecallersample
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_incoming_call.*
 
 /**
  * Created by RavindraP on 06 July 2020
  */
-class IncomingCallActivity : AppCompatActivity() {
+class IncomingCallActivity : Activity() {
 
     private var dialog: AlertDialog.Builder? = null
     private var mPhoneNumber: String? = null
@@ -27,12 +30,14 @@ class IncomingCallActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
+        setContentView(R.layout.activity_incoming_call)
         println("IncomingCall IncomingActivity 1 ")
         dialog = AlertDialog.Builder(this)
         val extras = intent.extras
         if (extras != null) {
             mPhoneNumber = extras.getString("mobile")
         }
+        txtPhoneNumber.text = "Incoming call from $mPhoneNumber"
         showMessage()
     }
 
