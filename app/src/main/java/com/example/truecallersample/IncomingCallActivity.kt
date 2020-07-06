@@ -19,11 +19,10 @@ class IncomingCallActivity : AppCompatActivity() {
             window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
             window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL)
 
-            var number = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER);
+            var number = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER)
             txtPhoneNumber.text = "Incoming call from $number"
         }
         catch (e:Exception) {}
-
     }
 
 }

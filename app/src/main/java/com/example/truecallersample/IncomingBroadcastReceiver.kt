@@ -41,6 +41,6 @@ class IncomingBroadcastReceiver: BroadcastReceiver() {
             phoneStateListener,
             PhoneStateListener.LISTEN_CALL_STATE
         )
-        //phoneStateListener.onCallStateChanged(state, phoneNumber)
+        phoneStateListener.onCallStateChanged(state, phoneNumber)
     }
 }
